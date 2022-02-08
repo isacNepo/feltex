@@ -2,17 +2,24 @@ package br.com.aula01.academicnet.modelo;
 
 import java.time.Instant;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.Data;
 
-
+@Entity
 @Data
 public class Aluno {
 
+	@Id
 	private Long matricula;
 	private String nome;
 	private String telefone;
 	private String email;
 	private Instant dataCadastro;
+	
+	public Aluno() {
+	}
 	
 	public Aluno(Long matricula, String nome, String telefone, String email, Instant dataCadastro) {
 		this.matricula = matricula;
@@ -61,7 +68,4 @@ public class Aluno {
 	public void setDataCadastro(Instant dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
-	
-	
-	
 }
